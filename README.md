@@ -80,12 +80,12 @@
 
     cd PolkadotNode_AWS
 
-    ./Install_Docker.sh
+    sh Install_Docker.sh
 
     # and at last run the installation of the Docker image that contains all the packages required for running Polkadot Node
     # you can change the name of the node, for this example is "jamcarbon_PokadotFullNode"
 
-    ./Install_Polkadot_Node.sh
+    sh Install_Polkadot_Node.sh
 
     # Finally test if the node is showing in the Telemetry "jamcarbon_PokadotFullNode"
 
