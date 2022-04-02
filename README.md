@@ -3,7 +3,7 @@
 # Prerequisites
 
 # 1. AWS account
-# 2. Linux distro (for executing AWS CLI)
+# 2. Linux (for executing AWS CLI)
 
 # Configuration Steps
 
@@ -37,7 +37,7 @@
 
     aws cloudformation validate-template --template-body file://CreatePolkaNodeCloudStack.yml
 
-    # Copy Key to the folder
+    # Copy the Global Key (.pem) to the folder and check the key
 
     aws ec2 describe-key-pairs
 
@@ -57,7 +57,7 @@
 
     aws cloudformation describe-stacks
 
-    # If there is any error, use the following to check logs
+    # If there is any error, use the following to check events
 
     aws cloudformation describe-stack-events --stack-name PolkaNodeCloudStack
 
@@ -95,18 +95,7 @@
 
 
 
-
-
-
-
-
     # Connect to the just created EC2
-
-    aws ec2-instance-connect send-ssh-public-key \
-    --availability-zone ap-south-1 \
-    --instance-id i-0d348e539783a1daf \
-    --instance-os-user ec2-user \
-    --ssh-public-key file://my_key.pub
 
 
 
