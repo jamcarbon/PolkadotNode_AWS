@@ -34,9 +34,3 @@ aws cloudformation describe-stacks
 
 
 
-# Connect to EC2
-
-
-ssh -o file://PolkaNodeKey1.pem ec2-user@PolkadotFullNodeEC2.PublicIp
-
-

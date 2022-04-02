@@ -27,11 +27,14 @@
 
     sudo apt install awscli
 
-    # Once you have AWSCLI installed run
+    # Once you have AWSCLI installed run, and enter the key generated on the previous step, you can do that by telling cli where the key is located "file://PolkaNodeKey.pem"
 
     aws configure
+    # Clone this repository
 
-    # And enter the key generated on the previous step, you can do that by telling cli where the key is located "file://PolkaNodeKey.pem"
+    git clone https://github.com/jamcarbon/PolkadotNode_AWS
+
+    # Check if there is any stack created and check the template to create the new stack
 
     aws cloudformation describe-stacks
 
@@ -64,10 +67,15 @@
 
     # Connect to the instance using the IP, I recommend connecting using Terminus, it is good to manage multiple connections at the same time
 
-    ssh -i "PolkaNodeKey.pem" ubuntu@0.0.0.0
+
+    ssh -o file://PolkaNodeKey1.pem ec2-user@PolkadotFullNodeEC2.PublicIp
 
 
 
+    # After connecting we need to install Docker, for that clone the repository into the server
 
+    git clone https://github.com/jamcarbon/PolkadotNode_AWS
+
+    
 
 
