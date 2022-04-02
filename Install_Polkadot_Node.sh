@@ -1,3 +1,4 @@
+#!/bin/bash
 
 docker run --rm -it parity/polkadot:v0.9.18 polkadot --version
 
