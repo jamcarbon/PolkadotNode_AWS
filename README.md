@@ -83,8 +83,8 @@
 
     ./Install_Polkadot_Node.sh
 
-    # Finally test if the node is showing in the Telemetry
+    # Finally test if the node is showing in the Telemetry "jamcarbon_PokadotFullNode"
 
-
+    https://telemetry.polkadot.io/
 
 
