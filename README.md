@@ -1,11 +1,11 @@
-Deploy a Polkadot Node on AWS using Cloudformation and Docker.
+# Deploy a Polkadot Node on AWS using Cloudformation and Docker.
 
-Prerequisites
+# Prerequisites
 
-1. AWS account
-2. Linux distro (for executing AWS CLI)
+# 1. AWS account
+# 2. Linux distro (for executing AWS CLI)
 
-Configuration Steps
+# Configuration Steps
 
 1. Generate Global Key
     # Before starting, we need to connect to our newely created AWS account via CLI, for that we need access key and secret key.
@@ -37,9 +37,7 @@ Configuration Steps
 
     aws cloudformation validate-template --template-body file://CreatePolkaNodeCloudStack.yml
 
-    # Create Key pair
-
-    aws ec2 create-key-pair --key-name PolkaNodeKey --query 'KeyMaterial' --output text > PolkaNodeKey.pem
+    # Copy Key to the folder
 
     aws ec2 describe-key-pairs
 
@@ -151,6 +149,16 @@ Configuration Steps
 
 
     ssh -o "IdentitiesOnly=yes" -i PolkaNodeKey ec2-user@ec2-198-51-100-1.compute-1.amazonaws.com
+
+
+
+
+
+    
+
+    mssh 'Instance-ID'
+
+
 
 
 
