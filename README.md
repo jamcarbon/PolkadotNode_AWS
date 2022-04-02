@@ -34,6 +34,8 @@
 
     git clone https://github.com/jamcarbon/PolkadotNode_AWS
 
+    cd PolkadotNode_AWS
+
     # Check if there is any stack created and check the template to create the new stack
 
     aws cloudformation describe-stacks
@@ -75,6 +77,8 @@
     # After connecting we need to install Docker, for that clone the repository into the server
 
     git clone https://github.com/jamcarbon/PolkadotNode_AWS
+
+    cd PolkadotNode_AWS
 
     ./Install_Docker.sh
 
