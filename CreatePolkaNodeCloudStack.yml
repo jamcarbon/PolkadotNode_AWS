@@ -1,0 +1,42 @@
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: EC2 for Polkadot Node and enable SSH
+
+Parameters: 
+  PolkaNodeKey:
+    Description: PolkaNodeKey
+    Type: 'AWS::EC2::KeyPair::KeyName'
+    ConstraintDescription: PolkaNodeKey
+
+Resources:
+  PolkadotFullNodeEC2:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      ImageId: ami-0851b76e8b1bce90b
+      KeyName: !Ref PolkaNodeKey
+      SecurityGroups:
+       - Ref: PolkaNodeSecurityGroup
+      Tags:
+        - Key: Node
+          Value: PolkadotFullNodeEC2
+      
+  PolkaNodeSecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+        IpProtocol: tcp
+        FromPort: 22
+        ToPort: 22
+        CidrIp: 0.0.0.0/0
+
+Outputs: 
+  InstanceID:
+    Description: The Instance ID
+    Value: !Ref PolkadotFullNodeEC2
+  PublicIp:
+    Description: PolkadotFullNodeEC2 Public IP
+    Value: !GetAtt PolkadotFullNodeEC2.PublicIp
+    Export:
+      Name: !Sub "${AWS::StackName}-PublicIp"
