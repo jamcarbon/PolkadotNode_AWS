@@ -16,7 +16,15 @@
     # The following page will be shown, where you can go to Access keys section and Create New Access Key as shown below.
     # You may download the credentials and keep them in a safe location on your system, as you won't be able to look at the Secret Access Key again once you close the dialog box as shown in the previous image. In case you've lost your keys, you can create new access keys by repeating the same steps as above. 
 
-    # (If you already have setup AWS on your system, to automate the whole process, skip to step 3)
+    # (If you already have setup AWS on your system, to automate the whole process, run these:
+
+    sudo chmod 774 DeployCloudformation.sh
+
+    ./DeployCloudformation.sh
+
+    # (wait 5 minutes and run, to check the ip, and skip to step 4)
+
+    aws cloudformation describe-stacks
 
    
 2. Configure AWS CLI
@@ -68,7 +76,7 @@
     
     # Create the Stack, it will take couple of minutes to create it
 
-    aws cloudformation create-stack --stack-name PolkaNodeCloudStack --template-body file://CreatePolkaNodeCloudStack.yml --parameters ParameterKey=PNK,ParameterValue=PNK ;
+    aws cloudformation create-stack --stack-name PolkaNodeCloudStack --template-body file://CreatePolkaNodeCloudStack.yml --parameters ParameterKey=PNK,ParameterValue=PNK 
 
     # Check the stack process and the IP of the newely created instance
 
