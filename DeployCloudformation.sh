@@ -14,11 +14,11 @@ chmod 400 PNK.pem ;
 
 aws cloudformation create-stack --stack-name PolkaNodeCloudStack --template-body file://CreatePolkaNodeCloudStack.yml --parameters ParameterKey=PNK,ParameterValue=PNK ;
 
-# Check the just created stacks to check the newely created instance IP
+echo "Check the just created stacks to check the newely created instance IP"
 
 aws cloudformation describe-stacks ;
 
-# grab the instance ip an connect to it, I will use termius to connect to it
+echo "Grab the instance ip an connect to it, I will use termius to connect to it"
 
 
 
