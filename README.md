@@ -1,4 +1,4 @@
-# Deploy a Polkadot Node on AWS (Ubuntu Server EC2) using Cloudformation and Docker.
+# Deploy a Polkadot Full Node on AWS (Ubuntu Server EC2) using Cloudformation and Docker in less than 5 minutes.
 
 Prerequisites
 
@@ -24,7 +24,7 @@ Configuration Steps
 
         ./DeployCloudformation.sh
 
-    (wait 5 minutes and run: to check the ip, and skip to step 4)
+    (wait 3-4 minutes and run: to check the ip, and skip to step 5)
 
         aws cloudformation describe-stacks
 
