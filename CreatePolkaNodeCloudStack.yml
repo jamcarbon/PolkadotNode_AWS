@@ -3,10 +3,11 @@ AWSTemplateFormatVersion: 2010-09-09
 Description: EC2 for Polkadot Node and enable SSH
 
 Parameters: 
-  PolkaNodeKey:
-    Description: PolkaNodeKey
+  # Polkadot Node Key
+  PNK:
+    Description: PNK
     Type: 'AWS::EC2::KeyPair::KeyName'
-    ConstraintDescription: PolkaNodeKey
+    ConstraintDescription: PNK
 
 Resources:
   PolkadotFullNodeEC2:
