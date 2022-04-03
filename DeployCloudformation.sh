@@ -12,11 +12,11 @@ ls -l ;
 
 chmod 400 PNK.pem ;
 
-aws cloudformation create-stack --stack-name PolkaNodeCS --template-body file://CreatePolkaNodeCloudStack.yml --parameters ParameterKey=PolkaNodeKey,ParameterValue=PolkaNodeKey ;
+aws cloudformation create-stack --stack-name PolkaNodeCloudStack --template-body file://CreatePolkaNodeCloudStack.yml --parameters ParameterKey=PNK,ParameterValue=PNK ;
 
 aws cloudformation describe-stacks ;
 
-aws cloudformation describe-stack-events --stack-name PolkaNodeCS ;
+aws cloudformation describe-stack-events --stack-name PolkaNodeCloudStack ;
 
 
 
