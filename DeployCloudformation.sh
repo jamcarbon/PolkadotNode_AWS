@@ -4,7 +4,7 @@ aws cloudformation describe-stacks ;
 
 aws cloudformation validate-template --template-body file://CreatePolkaNodeCloudStack.yml ;
 
-aws ec2 create-key-pair --key-name PNK.pem ;
+aws ec2 create-key-pair --key-name PNK --query 'KeyMaterial' --output text > PNK.pem ;
 
 aws ec2 describe-key-pairs ;
 
