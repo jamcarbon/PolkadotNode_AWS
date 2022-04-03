@@ -1,35 +1,35 @@
 #!/bin/bash
 
-sudo apt install awscli
+sudo apt install awscli ;
 
-aws configure
+aws configure ;
 
-aws cloudformation describe-stacks
+aws cloudformation describe-stacks ;
 
-aws cloudformation validate-template --template-body file://CreatePolkaNodeCloudStack.yml
+aws cloudformation validate-template --template-body file://CreatePolkaNodeCloudStack.yml ;
 
-aws ec2 describe-key-pairs
+aws ec2 create-key-pair --key-name PNK.pem ;
 
-ls -l
+aws ec2 describe-key-pairs ;
 
-chmod 400 PolkaNodeKey.pem
+ls -l ;
 
-aws cloudformation create-stack --stack-name PolkaNodeCS --template-body file://template1.yml --parameters ParameterKey=PolkaNodeKey,ParameterValue=PolkaNodeKey
+chmod 400 PNK.pem ;
 
-aws cloudformation describe-stacks
+aws cloudformation create-stack --stack-name PolkaNodeCS --template-body file://CreatePolkaNodeCloudStack.yml --parameters ParameterKey=PolkaNodeKey,ParameterValue=PolkaNodeKey ;
 
-aws cloudformation describe-stack-events --stack-name PolkaNodeCS
+aws cloudformation describe-stacks ;
 
-
-
-
+aws cloudformation describe-stack-events --stack-name PolkaNodeCS ;
 
 
-# Check the just created stacks to check the newely created instance ID
 
-aws cloudformation describe-stacks
 
-# grab the instance id an connect to it, I will use terminus to connect to it
+# Check the just created stacks to check the newely created instance IP
+
+aws cloudformation describe-stacks ;
+
+# grab the instance ip an connect to it, I will use termius to connect to it
 
 
 
