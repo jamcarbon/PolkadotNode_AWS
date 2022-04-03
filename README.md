@@ -16,14 +16,9 @@
     # The following page will be shown, where you can go to Access keys section and Create New Access Key as shown below.
     # You may download the credentials and keep them in a safe location on your system, as you won't be able to look at the Secret Access Key again once you close the dialog box as shown in the previous image. In case you've lost your keys, you can create new access keys by repeating the same steps as above. 
 
-    # (If you already have setup AWS on your system, to automate the whole process, clone this repository and run the code below, and skip to step 4)
+    # (If you already have setup AWS on your system, to automate the whole process, skip to step 3)
 
-    cd PolkadotNode_AWS
-
-    sudo chmod 774 DeployCloudformation.sh
-
-    ./DeployCloudformation.sh
-
+   
 2. Configure AWS CLI
 
     # Lets make sure you have AWS CLI installed on your system.
@@ -57,7 +52,7 @@
 
     # Create Key Pair
 
-    aws ec2 create-key-pair --key-name PNK --query 'KeyMaterial' --output text > PNK.pem ;
+    aws ec2 create-key-pair --key-name PNK --query 'KeyMaterial' --output text > PNK.pem
 
     # Check the newly created key
 
@@ -85,7 +80,11 @@
 
 4. Connect to the instance
 
-    # Connect to the instance using the IP, I recommend connecting using Termius, it is good to manage multiple connections at the same time
+    # Connect to the instance using the IP, I recommend connecting using Termius, it is good to manage multiple connections at the same time, you can install it by running 
+
+    sudo snap install termius-app
+
+    # or run
 
     ssh -i "PNK.pem" ubuntu@PolkadotFullNodeEC2.PublicIp
 
