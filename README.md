@@ -67,10 +67,10 @@
     aws cloudformation describe-stack-events --stack-name PolkaNodeCloudStack
 
 
-    # Connect to the instance using the IP, I recommend connecting using Terminus, it is good to manage multiple connections at the same time
+    # Connect to the instance using the IP, I recommend connecting using Termius, it is good to manage multiple connections at the same time
 
 
-    ssh -o file://PolkaNodeKey1.pem ec2-user@PolkadotFullNodeEC2.PublicIp
+    ssh -i "PolkaNodeKey1.pem" ubuntu@PolkadotFullNodeEC2.PublicIp
 
 
 
@@ -80,12 +80,12 @@
 
     cd PolkadotNode_AWS
 
-    sh Install_Docker.sh
+    sudo sh Install_Docker.sh
 
     # and at last run the installation of the Docker image that contains all the packages required for running Polkadot Node
     # you can change the name of the node, for this example is "jamcarbon_PokadotFullNode"
 
-    sh Install_Polkadot_Node.sh
+    sudo sh Install_Polkadot_Node.sh
 
     # Finally test if the node is showing in the Telemetry "jamcarbon_PokadotFullNode"
 
