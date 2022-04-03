@@ -1,9 +1,5 @@
 #!/bin/bash
 
-sudo apt install awscli ;
-
-aws configure ;
-
 aws cloudformation describe-stacks ;
 
 aws cloudformation validate-template --template-body file://CreatePolkaNodeCloudStack.yml ;
