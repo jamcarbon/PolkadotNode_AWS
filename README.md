@@ -66,7 +66,7 @@
 
     chmod 400 PNK.pem
     
-    # Create the Stack
+    # Create the Stack, it will take couple of minutes to create it
 
     aws cloudformation create-stack --stack-name PolkaNodeCloudStack --template-body file://CreatePolkaNodeCloudStack.yml --parameters ParameterKey=PNK,ParameterValue=PNK ;
 
