@@ -1,4 +1,4 @@
-Deploy a Polkadot Node on AWS (Ubuntu Server EC2) using Cloudformation and Docker.
+# Deploy a Polkadot Node on AWS (Ubuntu Server EC2) using Cloudformation and Docker.
 
 Prerequisites
 
