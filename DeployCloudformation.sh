@@ -8,8 +8,6 @@ aws ec2 create-key-pair --key-name PNK --query 'KeyMaterial' --output text > PNK
 
 aws ec2 describe-key-pairs ;
 
-ls -l ;
-
 chmod 400 PNK.pem ;
 
 aws cloudformation create-stack --stack-name PolkaNodeCloudStack --template-body file://CreatePolkaNodeCloudStack.yml --parameters ParameterKey=PNK,ParameterValue=PNK ;
